@@ -11,6 +11,7 @@ from ulauncher.api.shared.item.SmallResultItem import SmallResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.RunScriptAction import RunScriptAction
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
+from shutil import which
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -35,7 +36,7 @@ default_paths = ["{}/.local/share/remmina".format(os.environ.get('HOME')),
                  "{}/.remmina".format(os.environ.get('HOME'))]
 # remmina_profiles_path = "{}/.local/share/remmina".format(os.environ.get('HOME'))
 # remmina_profiles_path_alt = "{}/.remmina".format(os.environ.get('HOME'))
-remmina_bin = distutils.spawn.find_executable('remmina')
+remmina_bin = which('remmina')
 # This extension is useless without remmina
 if remmina_bin is None or remmina_bin == "":
     logger.error("Remmina executable path could not be determined")
