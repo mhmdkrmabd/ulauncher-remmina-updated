@@ -2,7 +2,6 @@ import os
 import json
 import logging
 import shlex
-import distutils.spawn
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent, ItemEnterEvent
